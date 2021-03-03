@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## Introduction
 
-You can use the [editor on GitHub](https://github.com/KSardana3/CS-4641/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Pairs trading is an algorithmic trading strategy where we trade based upon the idea that a pair of securities will always revert back to their historical spread. In terms of making profit, we go long and short during the time period when the spread between these two stocks is abnormal. When the spread returns to its historical mean, we have made profit on one, if not both, of the positions. When trying to find which pair of stocks to use, looking at pairs of stocks in the same industry is the best idea because they will react to similar market factors and therefore, have similar price variations. Once investors believe to have found a pair of stocks, they will verify the prices of the two stocks are cointegrated before they plan on trading them. Finally, with the cointegrated pair of stocks, investors can begin trading utilizing different statistical thresholds that will allow them to figure out if the current spread is near the historical mean spread or not.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Problem Statement
 
-### Markdown
+Given previous stock market data, we aim to employ Machine Learning to find the ideal pair of stocks and predict their future spread which we can trade upon. Predictive models in the stock market are mainly used to learn about the upcoming activity and fluctuation of different securities. Attaining a precise and faultless projection leads to a potential increase in excess return (or alpha) for financial institutions and investors. Machine Learning is useful in this context because there’s a large range of ML methods that have the possibility of discovering intuitions and patterns on a set of data, leading to important resolutions.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Methods
 
-```markdown
-Syntax highlighted code block
+Chronologically, our first ML method OPTICS, is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. This method will allow us to take a large random pool of stocks and cluster them based on their correlation. We picked OPTICS over DBSCAN because it can handle clusters of varying density. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we will use the LASSO regularized regression method to predict the future spread between an ideal pair which can be used to determine the z-score to trade on.
 
-# Header 1
-## Header 2
-### Header 3
+## Potential Results
 
-- Bulleted
-- List
+Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge.  
 
-1. Numbered
-2. List
+In summary, the OPTICS algorithm will identify clusters of correlated stocks, the ADF test will determine pairs between clusters, and the LASSO regression model will provide the future spread of these pairs. Performance metrics of our general model will serve to identify the associated risk of the trading strategy.  
 
-**Bold** and _Italic_ and `Code` text
+## Discussion
 
-[Link](url) and ![Image](src)
-```
+By utilizing a combination of ML methods and algorithms, individual investors and small-time traders no longer have to rely on the sole method of regression to aid in pair selection, and will eventually achieve a higher return on their investment. Our model should be able to simulate mean-reverting stock pairs and differentiate them from those who have a correlation but their spread is non-stationary. Meaning, ML can help identify stocks that do not belong to the same industry nor have similar characteristics but do have a correlation, increasing the possibility of making a profit. 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Additionally, it will be interesting to explore the impact of selecting distinct thresholds to signal a diverging spread between identified stocks. Selecting appropriate benchmarks for spread divergence may help reduce market-risk exposure, helping small-time investors achieve a consistent return regardless of the direction of the market. 
 
-### Jekyll Themes
+## References
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KSardana3/CS-4641/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Sarmento, S., & Horta, N. (2020, May 04). Enhancing a pairs trading strategy with the application of machine learning. Retrieved March 03, 2021, from https://www.sciencedirect.com/science/article/pii/S0957417420303146 
 
-### Support or Contact
+Vidyamurthy, G. (2011). Pairs Trading: Quantitative Methods and Analysis. Hoboken: John Wiley & Sons. 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Chien-Feng Huang, Chi-Jen Hsu, Chi-Chung Chen, Bao Rong Chang, Chen-An Li, "An Intelligent Model for Pairs Trading Using Genetic Algorithms", Computational Intelligence and Neuroscience, vol. 2015, Article ID 939606, 10 pages, 2015. https://doi.org/10.1155/2015/939606 
