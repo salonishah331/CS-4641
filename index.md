@@ -4,7 +4,7 @@ Pairs trading is an algorithmic trading strategy where we trade based upon the i
 
 ## Problem Statement
 
-Given previous stock market data, we aim to employ Machine Learning to find the ideal pair of stocks and predict their future spread which we can trade upon. Predictive models in the stock market are mainly used to learn about the upcoming activity and fluctuation of different securities. Attaining a precise and faultless projection leads to a potential increase in excess return (or alpha) for financial institutions and investors. Machine Learning is useful in this context because there’s a large range of ML methods that have the possibility of discovering intuitions and patterns on a set of data, leading to important resolutions.
+Given previous stock market data, we aim to employ Machine Learning to find the ideal pair of stocks and predict their future spread which we can trade upon. Predictive models in the stock market are mainly used to learn about the upcoming activity and fluctuation of different securities. Attaining an accurate projection leads to a potential increase in excess retur for financial institutions and investors. ML is useful in this context because there’s a large range of methods that have the possibility of discovering intuitions and patterns on a set of data, leading to important resolutions.
 
 ## Methods
 
