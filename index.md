@@ -8,7 +8,7 @@ Given previous stock market data, we aim to employ Machine Learning to find the 
 
 ## Methods
 
-Chronologically, our first ML method OPTICS, is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. This method will allow us to take a large random pool of stocks and cluster them based on their correlation. We picked OPTICS over DBSCAN because it can handle clusters of varying density. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we will use the LASSO regularized regression method to predict the future spread between an ideal pair which can be used to determine the z-score to trade on.
+Chronologically, our first ML method OPTICS, is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we will use the LASSO regularized regression method to predict the future spread between an ideal pair which can be used to determine the z-score to trade on.
 
 ## Potential Results
 
