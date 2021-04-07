@@ -16,6 +16,8 @@ Ideal results will provide information regarding which correlated stocks are div
 
 In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below. 
 
+![image](https://user-images.githubusercontent.com/51150161/113919797-ffb52800-97b1-11eb-81cc-bdaed350c767.png)
+
 ![image](https://user-images.githubusercontent.com/51150161/113919463-a3520880-97b1-11eb-9243-563ab123b15d.png)
 
 Our results are not ideal because the model only has one weight, so the regression shows a straight line as opposed to a polynomial fit. This does not accurately represent the spread between the stocks. In order to fix this, we will train the model with more features in order to generate a polynomial fit. Additionally, to find the spread between the data, we will define a spread function which will give us information about which stocks are converging and diverging. 
