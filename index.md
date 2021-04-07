@@ -10,11 +10,19 @@ Given previous stock market data, we aim to employ Machine Learning to find the 
 
 Chronologically, our first ML method OPTICS, is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. This method will allow us to take a large random pool of stocks and cluster them based on their correlation. We picked OPTICS over DBSCAN because it can handle clusters of varying density. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we will use the LASSO regularized regression method to predict the future spread between an ideal pair which can be used to determine the z-score to trade on.
 
-## Potential Results
+## Results
 
-Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge.  
+Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge.  (insert reference) 
 
-In summary, the OPTICS algorithm will identify clusters of correlated stocks, the ADF test will determine pairs between clusters, and the LASSO regression model will provide the future spread of these pairs. Performance metrics of our general model will serve to identify the associated risk of the trading strategy.  
+In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below. 
+![image](https://user-images.githubusercontent.com/51150161/113919441-9d5c2780-97b1-11eb-9c9c-54c7e92f5087.png)
+![image](https://user-images.githubusercontent.com/51150161/113919463-a3520880-97b1-11eb-9243-563ab123b15d.png)
+
+Our results are not ideal because the model only has one weight, so the regression shows a straight line as opposed to a polynomial fit. This does not accurately represent the spread between the stocks. In order to fix this, we will train the model with more features in order to generate a polynomial fit. Additionally, to find the spread between the data, we will define a spread function which will give us information about which stocks are converging and diverging. 
+
+
+Our lasso regression implementation was similar to our ridge. We used the same GM and Ford stocks and trained our model using 4/5 of the prices of the stocks. We obtained a fit from the data, but ran into the same issues as we did with Ridge regression. We will make the same modifications that we will make for the Ridge regression. 
+
 
 ## Discussion
 
